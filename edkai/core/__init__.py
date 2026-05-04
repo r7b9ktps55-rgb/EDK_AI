@@ -1,38 +1,28 @@
-"""Terminal Studio core modules."""
-
-from __future__ import annotations
-
-from edkai.core.config import StudioConfig
-from edkai.core.project import Project
-from edkai.core.runner import CodeRunner
-from edkai.core.snippets import SnippetEngine
-from edkai.core.macros import Macro, MacroRecorder
-from edkai.core.templates import TemplateManager
-from edkai.core.auto_fix import AutoFixEngine
-from edkai.core.test_runner import TestRunner, TestResult, Failure
-from edkai.core.fuzzy_search import FuzzySearcher, SearchResult, ContentResult
-from edkai.core.symbols import SymbolExtractor, Symbol
-from edkai.core.git_manager import GitManager, GitStatus, BlameInfo, CommitInfo
+"""Core modules for EDK_AI."""
+from edkai.core.config import ProviderConfig, StudioConfig
+from edkai.core.code_intel import CodeIntel, Symbol
+from edkai.core.repo_map import RepoMap
+from edkai.core.checkpoint import CheckpointManager, Checkpoint, UndoResult
+from edkai.core.sandbox import CommandSandbox, ValidationResult
+from edkai.core.vector_store import VectorStore, SearchResult, KeywordFallback
+from edkai.core.persistence import PersistenceManager, Session, Message, HistoryEntry
 
 __all__ = [
+    "ProviderConfig",
     "StudioConfig",
-    "Project",
-    "CodeRunner",
-    "SnippetEngine",
-    "Macro",
-    "MacroRecorder",
-    "TemplateManager",
-    "AutoFixEngine",
-    "TestRunner",
-    "TestResult",
-    "Failure",
-    "FuzzySearcher",
-    "SearchResult",
-    "ContentResult",
-    "SymbolExtractor",
+    "CodeIntel",
     "Symbol",
-    "GitManager",
-    "GitStatus",
-    "BlameInfo",
-    "CommitInfo",
+    "RepoMap",
+    "CheckpointManager",
+    "Checkpoint",
+    "UndoResult",
+    "CommandSandbox",
+    "ValidationResult",
+    "VectorStore",
+    "SearchResult",
+    "KeywordFallback",
+    "PersistenceManager",
+    "Session",
+    "Message",
+    "HistoryEntry",
 ]
