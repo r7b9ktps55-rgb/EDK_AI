@@ -21,6 +21,10 @@ from typing import Any, Protocol
 
 from edkai.agent.context import ProjectContext
 from edkai.agent.nl_router import NLRouter
+from edkai.core.repo_map import RepoMap
+from edkai.core.checkpoint import CheckpointManager
+from edkai.agent.multi_edit import MultiEditEngine
+from edkai.agent.diff_engine import DiffEngine
 from edkai.agent.tools import ToolRegistry, ToolResult
 
 
@@ -64,6 +68,20 @@ Rules:
 - Run tests after making changes
 - Ask the user if unsure about destructive operations
 - Be concise in your final response
+## Multi-File Editing Format
+When editing files, use this exact format for EACH change:
+File: path/to/file.py
+<<<<<<< SEARCH
+old code (exact match, 3-5 lines context)
+=======
+new code
+>>>>>>> REPLACE
+
+Rules:
+- SEARCH must match EXACTLY one place
+- Include 3-5 lines of context for uniqueness
+- Can make multiple changes — one block per change
+
 """
 
     # ------------------------------------------------------------------
