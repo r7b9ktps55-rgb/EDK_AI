@@ -25,7 +25,8 @@ import re
 import shutil
 import subprocess
 from abc import ABC, abstractmethod
-from dataclasses import dataclass, field
+from dataclasses import dataclass
+from edkai.core.sandbox import CommandSandbox, field
 from pathlib import Path
 from typing import Any, ClassVar
 
