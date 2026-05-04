@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "EDK_AI"
-version = "0.5.0"
+version = "0.6.0"
 description = "EDK_AI v5 — Universal AI Code Agent. TUI IDE + Agent mode with free AI models."
 readme = "README.md"
 license = {text = "MIT"}
